@@ -1,0 +1,129 @@
+.verification-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .verification-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .verification-title {
+    text-align: center;
+    color: #333;
+    margin: 0 0 30px 0;
+    font-size: 24px;
+  }
+  
+  .verification-inputs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .verification-input {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    transition: all 0.3s ease;
+  }
+  
+  .verification-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+  
+  .verification-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .verify-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .verify-button:hover:not(:disabled) {
+    background-color: #2CA8E2;
+  }
+  
+  .verify-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .verify-button.loading {
+    opacity: 0.8;
+    cursor: wait;
+  }
+  
+  .resend-button {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    color: #007bff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .resend-button:hover:not(:disabled) {
+    color: #2CA8E2;
+    text-decoration: underline;
+  }
+  
+  .resend-button:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .error-message {
+    color: #dc3545;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  .success-message {
+    color: #28a745;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 480px) {
+    .verification-card {
+      padding: 20px;
+    }
+  
+    .verification-input {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+    }
+  }

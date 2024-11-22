@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap');
+.Inclusive-addStory-page {
+    width: 1000px;
+    margin: 1.2rem auto;
+}
+
+@media only screen and (max-width: 1001px) {
+    .Inclusive-addStory-page {
+        width: 100%;
+    }
+}
+
+.Inclusive-addStory-page .addStory-form {
+    position: relative;
+    width: 650px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.addStory-form input#title {
+    width: 100%;
+    height: 55px;
+    outline: 0;
+    border: none;
+    border: rgb(235, 235, 235) solid 1px;
+    color: #fff;
+    font-size: 1.4rem;
+    padding-left: 1rem;
+    font-weight: 450;
+    font-family: 'Balsamiq Sans', cursive;
+    border-bottom: none;
+    background: transparent;
+}
+
+
+
+.StoryImageField {
+    border: rgb(235, 235, 235) solid 1px;
+    width: 100%;
+    height: 240px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    margin-top: 1rem;
+    position: relative;
+    color: #fff;
+}
+
+.StoryImageField svg {
+    font-size: 1.4rem;
+}
+
+.StoryImageField .txt {
+    width: 350px;
+    height: auto;
+    margin-top: 14px;
+    text-align: center;
+}
+
+.StoryImageField [type="file"] {
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.addStory-btn {
+    width: 100%;
+    background-color: #0063a5;
+    padding: 0.7rem;
+    color: white;
+    margin-top: 1.9rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+}
+
+.dis-btn {
+    width: 100%;
+    background-color: #0063a5;
+    padding: 0.7rem;
+    color: white;
+    margin-top: 1.9rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    opacity: 0.4;
+}
+
+.addStory-form .error_msg {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    background-color: rgba(245, 72, 72, 0.9);
+    color: white;
+    padding: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.addStory-form .success_msg {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    background-color: rgba(14, 218, 75, 0.9);
+    color: white;
+    padding: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.addStory-form .success_msg a {
+    color: black;
+    font-weight: bold;
+    padding-left: 1rem;
+}
+
+.story-message-card{
+        right: 0;
+        top: 0;
+        position: fixed;
+        width: auto;
+        border-radius: 5px;
+        height: auto;
+        background: #ccc;
+        color: #fff;
+        padding: 10px;
+        z-index: 1000;
+        margin-right: 10px
+}
+
+.story-nav-card-wrapper{
+        position: absolute;
+        border: 1px solid black;
+        border-radius: 8px;
+        z-index: 1000;
+        margin-left: 10px;
+        margin-top: 2px;
+        background: #333;
+        color: #fff
+}
+
+.story-nav-card-element{
+        padding: 10px; 
+        text-align: center; 
+        cursor: pointer
+}
+
+.react-quill{
+    width: 650px;
+    height: 350px;
+}
+
+.react-quill img{
+    width: 75%;
+    max-height: auto;
+     margin: 10px 50%;
+    transform: translateX(-50%);
+}
+
+.select-field {
+    font-family: sans-serif;
+    font-size: 14px;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+@media (max-width: 600px) {
+    .react-quill{
+        width: 100%;
+        height: 400px;
+        align-self: flex-start;
+    }
+    .Inclusive-addStory-page .addStory-form {
+        width: 100%;
+        padding: 0px 10px;
+    }
+}

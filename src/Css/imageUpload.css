@@ -1,0 +1,33 @@
+.image-component-wrapper{
+    display: flex;
+    width: 85%;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 0% 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    
+}
+.logo-header-wrapper{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+}
+.image-heading{
+    font-size: 25px; 
+    color: #ccc;
+    text-align: center;
+}
+.image-file-input-label{
+    color: #fff;
+    border-radius: 5px;
+    background: #004AAD;
+    padding: 10px;
+    margin-top: 50%;
+    transform: translateY(-50%);
+}
+.image-file-input{
+    display: none;
+}

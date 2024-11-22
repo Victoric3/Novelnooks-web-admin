@@ -1,0 +1,22 @@
+{
+    "baseUrl" : "https://novelnooks-backend.onrender.com",
+    "copyright": "Novel Nooks. All Rights Reserved",
+    "Name": "Novel Nooks",
+    "AppColor": "#2CA8E2",
+    "background": "#192133",
+    "greenColor": "#7EF29B",
+    "whiteColor": "#FFFFFF",
+    "blackColor": "#333",
+    "ContactEmail": "NovelNook@gmail.com",
+    "faceBook": "#",
+    "linkedIn": "#",
+    "twiter": "#",
+    "instagram": "#",
+    "youtube": "#",
+    "phone1": "+1234567890",
+    "phone2": "+1234567890",
+    "email": "NovelNooks@gmail.com",
+    "location": "pakistan",
+    "dev": true
+
+}

@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap&family=Hammersmith+One&family=Londrina+Solid:wght@900&display=swap");
+.home-overlay {
+  width: 100%;
+  height: 100vh;
+  background-color: #333;
+  opacity: 70%;
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+}
+.flexStyle {
+  display: flex;
+  margin: 15px auto;
+  flex-direction: column;
+  width: 85%;
+  padding: 10px 0px;
+  height: auto;
+}
+.contact-overlay {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.hover-image-wrapper {
+  display: flex;
+}
+
+.blog-caption {
+  width: 65%;
+  margin: 30px auto;
+}
+.blog-caption h4 {
+  color: #333;
+  margin-left: 15px;
+  font-weight: 700;
+}
+
+.story-card-wrapper {
+  position: relative;
+  width: 1050px;
+  min-height: 100px;
+  margin: 0px auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.story-card {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  position: relative;
+  height: 460px;
+  border-radius: 6px;
+  margin: 2rem 1rem;
+  border: 1px solid rgba(121, 118, 118, 0.3);
+  box-shadow: 0 0 10px 5px rgba(88, 88, 88, 0.1);
+  background-color: transparent;
+  transition: 350ms ease all;
+}
+
+@media only screen and (max-width: 1050px) {
+  .story-card-wrapper {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .story-card {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 674px) {
+  .story-card {
+    width: 380px;
+  }
+  .blog-caption {
+    width: 100%;
+  }
+}
+
+.story-card:hover {
+  transform: scale(1.01);
+}
+
+.story-card a.story-link {
+  text-decoration: none;
+}
+
+.story-card img.story-image {
+  width: 100%;
+  height: 225px;
+  border-radius: 6px 6px 0 0;
+  object-fit: cover;
+}
+
+.story-card .story-content-wrapper {
+  padding: 14px;
+}
+
+.story-card h5.story-title {
+  font-size: 1.4rem;
+  line-height: 30px;
+  height: 87px;
+  letter-spacing: 0.6px;
+  color: #fff;
+  padding: 10px 3px;
+  font-weight: bold;
+  margin-bottom: 1.2rem;
+  word-wrap: break-word;
+  font-family: "Hammersmith One", sans-serif;
+  font-family: "Londrina Solid", cursive;
+}
+
+.story-card .story-text {
+  height: 55px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.story-card .story-text,
+.story-card .story-text * {
+  color: rgb(92, 92, 92);
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.story-card .story-createdAt {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: rgb(48, 47, 47);
+}
+
+@media only screen and (max-width: 1050px) {
+  .story-card-wrapper {
+    justify-content: flex-start;
+  }
+}

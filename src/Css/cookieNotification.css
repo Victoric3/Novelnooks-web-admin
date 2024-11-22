@@ -1,0 +1,45 @@
+#cookie-notification {
+    position: fixed;
+    bottom: 0;
+    left: 10px;
+    width: 300px;
+    background: #004AAD;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+  }
+  
+  #cookie-notification .button-wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    gap: 3px;
+  }
+  #cookie-notification button {
+    cursor: pointer;
+    border-radius: 5px;
+    border-color: white;
+    padding: 5px 15px;
+    background-color: #004AAD;
+    color: #fff;
+  }
+  #cookie-notification img{
+    border-radius: 50%;
+    align-self: center;
+    width: 100px;
+    height: auto;
+    
+  }
+@media (max-width: 600px) {
+  #cookie-notification {
+    left: 0;
+    width: 98%;
+    margin-left: 50%;
+    transform: translateX(-50%)
+    
+  }
+}

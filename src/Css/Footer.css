@@ -1,0 +1,146 @@
+.contact-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #111;
+    color: white;
+    gap: 1%;
+    padding: 20px 0px;
+    padding-top: 50px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 200px;
+    border-radius: 100px 100px 0 0;
+  }
+  
+  .contact-info,
+  .social-media,
+  .quick-links{
+    margin: 15px;
+}
+  
+  .contact-info h3,
+  .social-media h3,
+  .quick-links h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  /* .contact-info p,
+  .quick-links ul,
+  .copyrigtht p {
+    margin: 5px 0;
+  }
+   */
+  .contact-info span {
+    font-weight: bold;
+  }
+  
+  .contact-info a,
+  .quick-links a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover,
+  .quick-links a:hover {
+    color: #800080;
+    transition: all 0.3s;
+  }
+  
+  .social-media ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .social-media li {
+    margin: 0 10px;
+  }
+  .quick-links li{
+    margin-bottom: 10px;
+  }
+  .social-media a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+  }
+  
+  .social-media a:hover {
+    transform: scale(1.1);
+    transition: all 0.3s;
+  }
+  
+  .quick-links ul {
+    column-count: 1;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .logo-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  .logo{
+    height: 70px;
+    width: auto;
+    border-radius: 50%;
+    margin: 5px;
+  }
+  .horizontal-line{
+    display: block;
+    height: 1px;
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #fff;
+    margin: 1em 0;
+    padding: 0;
+    color: #fff 
+  }
+  
+  .copyrigtht p {
+    font-size: 18px;
+    text-align: center;
+    color: #ccc;
+    align-self: end;
+  }
+  
+  @media (max-width: 1050px) {
+    .contact-footer{
+        padding: 2px;
+        padding-top: 80px;
+        gap: 10px;
+    }
+    .contact-info,
+    .social-media,
+    .quick-links{
+      margin: 3px
+  }
+  }
+  @media (max-width: 600px) {
+    .contact-footer{
+      justify-content: flex-start;
+      flex-direction: column;
+      padding-left: 20px;
+    }
+  }
+  @media (max-width: 300px) {
+    .social-media ul{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+    }
+    .social-media li{
+      margin-top: 5px;
+    }
+  }

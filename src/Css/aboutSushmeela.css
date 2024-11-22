@@ -1,0 +1,160 @@
+.container {
+    position: relative;
+    padding: 40px;
+    color: white;
+    border-radius: 15px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .textContainer {
+    flex: 1;
+    margin-right: 20px;
+    margin-bottom: 0;
+    text-align: left;
+  }
+  
+  .header {
+    font-size: 2.7em;
+    margin-top: -3.0em;
+    margin-bottom: 2.0em;
+    margin-left: -6.0em;
+    width: 80%;
+    text-align: center;
+  }
+  
+  .typedText {
+    color: #7EF29B;
+    font-weight: bold;
+  }
+  
+  .paragraph {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    max-width: 1000px;
+    text-align: center;
+  }
+  
+  .imageContainer {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-star1t;
+  }
+  
+  .imageWrapper {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 0 0 50% 0;
+    border: 5px solid #7EF29B;
+    z-index: 2;
+  }
+  
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .secondImageWrapper {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    margin-top: -100px;
+    margin-left: 70px;
+    overflow: hidden;
+    border-radius: 0 25%;
+    border: 5px solid #7EF29B;
+  }
+  
+  .star1 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin-top: 270px;
+  }
+  
+  .star2 {
+    position: absolute;
+    margin-top: -45px;
+    margin-left: -50px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .spiral {
+    position: relative;
+    margin-left: -65px;
+    margin-right: 5px;
+    margin-top: -10px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  @media (max-width: 1280px) {
+    .header{
+        width: 95%;
+        margin-top: 0;
+    }
+    .star2 {
+        position: relative;
+        margin: 0px;
+    }
+  }
+  @media (max-width: 1030px) {
+    .container {
+      width: 100%;
+      padding: 10px;
+      flex-direction: column;
+    }
+  
+    .textContainer {
+      margin-right: 0;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  
+    .header {
+      margin: 0;
+      width: 100%;
+      align-items: center;
+    }
+  
+    .imageContainer {
+      align-items: center;
+    }
+
+    .secondImageWrapper{
+        margin-left: 0;
+    }
+    .star1{
+        margin-left: -400px;
+        margin-top: 50px;
+    }
+    
+  }
+  @media (max-width: 912px) {
+    .spiral{
+        margin-left: 0px;
+    }
+    .star1{
+        margin-left: -300px;
+        margin-top: 50px;
+    }
+  }
+  @media (max-width: 600px) {
+    .secondImageWrapper{
+        width: 100%;
+        height: auto;
+    }
+  }
+  
