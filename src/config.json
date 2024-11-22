@@ -1,5 +1,5 @@
 {
-    "baseUrl" : "https://novelnooks-backend.onrender.com",
+    "baseUrl" : "https://novelnooks-h0aqh8dhbyfgd7h8.eastus-01.azurewebsites.net",
     "copyright": "Novel Nooks. All Rights Reserved",
     "Name": "Novel Nooks",
     "AppColor": "#2CA8E2",
@@ -16,7 +16,7 @@
     "phone1": "+1234567890",
     "phone2": "+1234567890",
     "email": "NovelNooks@gmail.com",
-    "location": "pakistan",
-    "dev": true
+    "location": "Nigeria",
+    "dev": false
 
 }
