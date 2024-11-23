@@ -112,14 +112,15 @@ const HeaderStory = () => {
             </div>
           ) : (
             <div className="unauthenticated-user">
-              <Link to="/login" className="login-btn">Login</Link>
+              <Link to="/" className="login-btn">Login</Link>
               <Link
-                to="/register"
+                // to="/register"
                 className="register-btn"
                 style={{
                   backgroundColor: configData.AppColor,
                   color: 'white'
                 }}
+                onClick={() => alert("DownLoad the mobile app and complete signUp")}
               >
                 Get Started
               </Link>
