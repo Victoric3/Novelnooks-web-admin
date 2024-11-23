@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 // import SearchForm from "./SearchForm";
 import { RiPencilFill } from "react-icons/ri";
-import { BiLogOut, BiUser, BiCog } from "react-icons/bi";
+import { BiLogOut } from "react-icons/bi";
 import { AuthContext } from "../../Context/AuthContext";
 import configData from "../../config.json";
 import logo from "../../img/logo.png";
