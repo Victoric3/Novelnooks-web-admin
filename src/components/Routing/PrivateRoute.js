@@ -24,12 +24,13 @@ const PrivateRoute = () => {
           throw new Error('No user data received');
         }
       } catch (error) {
-          
+          console.log(error);
           // Handle different error scenarios
         if (error?.response?.status === 401) {
+            alert("no cookie data present")
             setIsAuthenticated(false);
             setActiveUser({});
-          // Session expired
+          // // Session expired
           navigate('/', { 
             state: { 
               message: 'Session expired. Please log in again.' 

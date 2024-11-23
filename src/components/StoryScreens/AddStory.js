@@ -462,7 +462,7 @@ const AddBookEditor = () => {
       const progressInterval = setInterval(() => {
         setUploadProgress((prev) => (prev >= 90 ? 90 : prev + 10));
       }, 200);
-      console.log("title", title, "contentTitles", contentTitles, "summary", summary, "tags", tags, "content", content, 'image: ', image )
+      // console.log("title", title, "contentTitles", contentTitles, "summary", summary, "tags", tags, "content", content, 'image: ', image )
       await instance.post(`/story/addstory`, formData);
 
       clearInterval(progressInterval);

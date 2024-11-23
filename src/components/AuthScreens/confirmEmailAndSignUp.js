@@ -1,8 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import instance from '../../Context/axiosConfig';
 import { getDeviceInfo, getLocationInfo, getIpAddress } from '../../Context/deviceHelpers';
 import '../../Css/verificationCodeInput.css';
+import { AuthContext } from "../../Context/AuthContext";
 
 const VerificationCodeInput = () => {
   const [verificationCode, setVerificationCode] = useState(new Array(6).fill(''));
@@ -11,6 +12,8 @@ const VerificationCodeInput = () => {
   const [isLoading, setIsLoading] = useState(false);
   const inputRefs = useRef([]);
   const navigate = useNavigate();
+  const { setToken } = useContext(AuthContext);
+
 
   useEffect(() => {
     inputRefs.current = inputRefs.current.slice(0, 6);
@@ -85,6 +88,8 @@ const VerificationCodeInput = () => {
       });
 
       if (response.status === 200) {
+        const token = response.data?.token;
+        setToken(token);
         setSuccess('Verification successful');
         navigate('/addStory');
       }

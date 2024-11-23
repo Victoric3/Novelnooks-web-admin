@@ -24,7 +24,6 @@ const LoginScreen = () => {
     try {
       localStorage.setItem('userIdentity', identity)
       const result = await authLogin(identity, password);
-      console.log("sent login")
 
       if (result.success && result.role === 'admin') {
         setSuccess("Login successful!");
