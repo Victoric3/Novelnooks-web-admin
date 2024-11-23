@@ -94,12 +94,9 @@ const HeaderStory = () => {
                 />
                 {dropdownOpen && (
                   <div className="user-dropdown">
-                    <Link to="/profile" className="dropdown-item">
-                      <BiUser /> Profile
-                    </Link>
-                    <Link to="/settings" className="dropdown-item">
-                      <BiCog /> Settings
-                    </Link>
+                    <button onClick={handleStoryAction} className="dropdown-item" style={{border: "none"}}>
+                        <RiPencilFill /> {getStoryActionText()}
+                    </button>
                     <button
                       onClick={handleLogout}
                       className="dropdown-item logout-btn"
