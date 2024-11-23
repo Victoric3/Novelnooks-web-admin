@@ -530,3 +530,10 @@
     ::-webkit-scrollbar-thumb:hover {
       background: rgba(80, 80, 80, 0.6);
     }
+
+  @media (max-width: 600px) {
+    .content-titles-add-content-title-wrapper{
+      display: flex;
+      flex-direction: column;
+    }
+  }
