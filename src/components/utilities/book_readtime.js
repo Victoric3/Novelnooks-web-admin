@@ -11,9 +11,7 @@ const BookReadTime = ({ readTime }) => {
       hours > 0
         ? `${hours} hour${hours > 1 ? "s" : ""} ${minutes > 0 ? `${minutes} min` : ""} read`
         : `${minutes} min read`;
-    console.log('minutes: ', minutes)
-    console.log('readTime: ', readTime)
-  
+
     return <span>{formattedTime}</span>;
   };
 

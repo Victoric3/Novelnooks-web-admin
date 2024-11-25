@@ -31,6 +31,8 @@ const EnhancedBookEditor = () => {
 
   // Form data states
   const [title, setTitle] = useState('');
+  const [contentTitles, setContentTitles] = useState([]);
+  const [newContentTitle, setNewContentTitle] = useState('');
   const [summary, setSummary] = useState('');
   const [tags, setTags] = useState([]);
   const [newTag, setNewTag] = useState('');
@@ -46,6 +48,7 @@ const EnhancedBookEditor = () => {
       if (bookToEdit) {
         setBook(bookToEdit);
         setTitle(bookToEdit.title);
+        setContentTitles(bookToEdit.contentTitles || []);
         setSummary(bookToEdit.summary);
         setTags(bookToEdit.tags);
         setPreviewImage(bookToEdit.image);
@@ -245,7 +248,7 @@ const handleChapterChange = useCallback((index, content) => {
 
   const handleAddTag = (tagToAdd) => {
     if (tags.length >= 3) {
-      setError('A maximum of three tags is allowed. Please remove some tags before adding more.');
+      alert('A maximum of three tags is allowed. Please remove some tags before adding more.');
       return;
     }
     
@@ -268,6 +271,21 @@ const handleChapterChange = useCallback((index, content) => {
     }));
   };
   // Render chapter editors based on edit mode
+
+  const handleAddContentTitle = () => {
+    if (newContentTitle.trim() && !contentTitles.includes(newContentTitle.trim())) {
+      setContentTitles(prev => [...prev, newContentTitle.trim()]);
+      setNewContentTitle('');
+    }
+  };
+  useEffect(() => {
+    console.log(newContentTitle, contentTitles);
+  }, [newContentTitle, contentTitles]);
+
+  // Remove content title method
+  const handleRemoveContentTitle = (titleToRemove) => {
+    setContentTitles(prev => prev.filter(title => title !== titleToRemove));
+  };
 
   const renderMetadataSection = () => {
     return (
@@ -375,6 +393,36 @@ const handleChapterChange = useCallback((index, content) => {
                 </button>
               </div>
             </div>
+            <div className="form-group">
+          <label>Content Titles</label>
+          <div className="content-titles-container">
+            {contentTitles.map(title => (
+              <div key={title} className="content-title">
+                {title}
+                <FaTimes 
+                  onClick={() => handleRemoveContentTitle(title)} 
+                  className="content-titles-remove-title-icon" 
+                />
+              </div>
+            ))}
+            <div className="content-titles-add-content-title-wrapper">
+              <input
+                type="text"
+                value={newContentTitle}
+                onChange={(e) => setNewContentTitle(e.target.value)}
+                placeholder="Enter content title"
+                className="content-titles-content-title-input"
+              />
+              <button 
+                onClick={handleAddContentTitle} 
+                className="content-titles-add-content-title-btn"
+                disabled={!newContentTitle.trim()}
+              >
+                <FaPlusCircle /> Add
+              </button>
+            </div>
+          </div>
+        </div>
           </div>
         )}
       </div>
@@ -388,19 +436,20 @@ const handleChapterChange = useCallback((index, content) => {
     setUploadProgress(0);
 
     try {
+      // console.log('contentTitles', contentTitles);
       const formData = new FormData();
       formData.append('title', title);
+      formData.append("contentTitles", JSON.stringify(contentTitles));
       formData.append('summary', summary);
       formData.append('tags', JSON.stringify(tags));
       formData.append('image', image);
       // Prepare content based on edit mode
       const content = chapters.map(chapter => chapter.content);
       formData.append('content', JSON.stringify(content));
-      console.log('content', content);
       // Determine partial status
       const partial = editMode !== 'full';
       formData.append('partial', partial);
-      console.log('partial', partial);
+      // console.log('partial', partial);
 
 
       // Add chapter tracking for partial edits
