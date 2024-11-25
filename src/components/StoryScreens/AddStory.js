@@ -443,26 +443,26 @@ const AddBookEditor = () => {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const content = chapters.map((chapter) => chapter.content);
+    if (!image) {
+      return setError("Image is required.");
+    }
+    
+    if (!summary) {
+      return setError("Summary is required.");
+    }
+    
+    if (tags.length < 1) {
+      return setError("At least one tag is required.");
+    }
+    
+    if (content.some(el => el.length < 1500)) {
+      return setError("Each content element must have at least 1500 characters.");
+    }
     setIsUploading(true);
     setUploadProgress(0);
-    const content = chapters.map((chapter) => chapter.content);
 
     try {
-      if (!image) {
-        return setError("Image is required.");
-      }
-      
-      if (!summary) {
-        return setError("Summary is required.");
-      }
-      
-      if (tags.length < 1) {
-        return setError("At least one tag is required.");
-      }
-      
-      if (content.some(el => el.length < 1500)) {
-        return setError("Each content element must have at least 1500 characters.");
-      }
       
       const formData = new FormData();
       formData.append("title", title);
