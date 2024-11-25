@@ -13,8 +13,6 @@ const AuthContextProvider = props => {
     if (token) {
       // Store in localStorage
       localStorage.setItem('authToken', token);
-      // Store in cookie (expires in 7 days)
-      document.cookie = `authToken=${token}; path=/; max-age=${7 * 24 * 60 * 60}; secure; samesite=strict`;
       // Update axios instance headers
       instance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
     }
@@ -23,8 +21,6 @@ const AuthContextProvider = props => {
   const clearToken = () => {
     // Clear from localStorage
     localStorage.removeItem('authToken');
-    // Clear from cookie
-    document.cookie = 'authToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; secure; samesite=strict';
     // Remove from axios instance headers
     delete instance.defaults.headers.common['Authorization'];
   };
