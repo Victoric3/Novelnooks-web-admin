@@ -445,18 +445,32 @@ const AddBookEditor = () => {
     e.preventDefault();
     setIsUploading(true);
     setUploadProgress(0);
+    const content = chapters.map((chapter) => chapter.content);
 
     try {
+      if (!image) {
+        return setError("Image is required.");
+      }
+      
+      if (!summary) {
+        return setError("Summary is required.");
+      }
+      
+      if (tags.length < 1) {
+        return setError("At least one tag is required.");
+      }
+      
+      if (content.some(el => el.length < 1500)) {
+        return setError("Each content element must have at least 1500 characters.");
+      }
+      
       const formData = new FormData();
       formData.append("title", title);
       formData.append("contentTitles", JSON.stringify(contentTitles));
       formData.append("summary", summary);
       formData.append("tags", JSON.stringify(tags));
-      if (image) {
-        formData.append("image", image);
-      }
+      formData.append("image", image);
 
-      const content = chapters.map((chapter) => chapter.content);
       formData.append("content", JSON.stringify(content));
 
       const progressInterval = setInterval(() => {
@@ -473,8 +487,7 @@ const AddBookEditor = () => {
 
       navigate("/editstory");
     } catch (err) {
-      setError(err?.response?.data?.error || "Upload failed");
-      console.log(error.response);
+      setError(err?.response?.data?.errorMessage || "Upload failed");
       setIsUploading(false);
       setUploadProgress(0);
     }

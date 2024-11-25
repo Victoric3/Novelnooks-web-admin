@@ -436,6 +436,22 @@ const handleChapterChange = useCallback((index, content) => {
     setUploadProgress(0);
 
     try {
+      const content = chapters.map(chapter => chapter.content);
+      if (!image) {
+        return setError("Image is required.");
+      }
+      
+      if (!summary) {
+        return setError("Summary is required.");
+      }
+      
+      if (tags.length < 1) {
+        return setError("At least one tag is required.");
+      }
+      
+      if (content.some(el => el.length < 1500)) {
+        return setError("Each content element must have at least 1500 characters.");
+      }
       // console.log('contentTitles', contentTitles);
       const formData = new FormData();
       formData.append('title', title);
@@ -444,7 +460,6 @@ const handleChapterChange = useCallback((index, content) => {
       formData.append('tags', JSON.stringify(tags));
       formData.append('image', image);
       // Prepare content based on edit mode
-      const content = chapters.map(chapter => chapter.content);
       formData.append('content', JSON.stringify(content));
       // Determine partial status
       const partial = editMode !== 'full';
