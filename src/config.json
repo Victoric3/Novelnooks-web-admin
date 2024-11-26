@@ -1,5 +1,5 @@
 {
-    "baseUrl" : "https://novelnooks-h0aqh8dhbyfgd7h8.eastus-01.azurewebsites.net",
+    "baseUrl" : "http://localhost:8000",
     "copyright": "Novel Nooks. All Rights Reserved",
     "Name": "Novel Nooks",
     "AppColor": "#2CA8E2",

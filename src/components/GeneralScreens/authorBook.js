@@ -42,7 +42,7 @@ const AuthorBooksScreen = () => {
 
           // Maintain backward compatibility by storing only the data array
           localStorage.setItem(
-            "authorBooks",
+            `authorBooks`,
             JSON.stringify(response.data.data)
           );
         }, 1000);

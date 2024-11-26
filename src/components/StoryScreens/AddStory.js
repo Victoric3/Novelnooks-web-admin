@@ -42,7 +42,7 @@ const AddBookEditor = () => {
   const [image, setImage] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
   const [contentTitles, setContentTitles] = useState([]);
-  const [newContentTitle, setNewContentTitle] = useState('');
+  const [newContentTitle, setNewContentTitle] = useState("");
 
   // Initialize component with local storage or empty values
   useEffect(() => {
@@ -56,11 +56,11 @@ const AddBookEditor = () => {
         setTags(parsedDraft.tags || []);
         setImage(parsedDraft.image || null);
         setPreviewImage(parsedDraft.previewImage || null);
-        setContentTitles(parsedDraft.contentTitles || []); 
+        setContentTitles(parsedDraft.contentTitles || []);
         const initialChapters = parsedDraft.chapters?.length
           ? parsedDraft.chapters.map((chapter, index) => ({
               index,
-              content: chapter.content || "",
+              content: chapter.content,
               isEdited: true,
               originalIndex: index,
               placeholder:
@@ -206,7 +206,7 @@ const AddBookEditor = () => {
       );
     }
   );
-    
+
   const handleChapterChange = useCallback((index, content) => {
     setChapters((prev) =>
       prev.map((chapter) =>
@@ -282,15 +282,18 @@ const AddBookEditor = () => {
   };
 
   const handleAddContentTitle = () => {
-    if (newContentTitle.trim() && !contentTitles.includes(newContentTitle.trim())) {
-      setContentTitles(prev => [...prev, newContentTitle.trim()]);
-      setNewContentTitle('');
+    if (
+      newContentTitle.trim() &&
+      !contentTitles.includes(newContentTitle.trim())
+    ) {
+      setContentTitles((prev) => [...prev, newContentTitle.trim()]);
+      setNewContentTitle("");
     }
   };
 
   // Remove content title method
   const handleRemoveContentTitle = (titleToRemove) => {
-    setContentTitles(prev => prev.filter(title => title !== titleToRemove));
+    setContentTitles((prev) => prev.filter((title) => title !== titleToRemove));
   };
 
   const renderMetadataSection = () => {
@@ -405,35 +408,35 @@ const AddBookEditor = () => {
               </div>
             </div>
             <div className="form-group">
-          <label>Content Titles</label>
-          <div className="content-titles-container">
-            {contentTitles.map(title => (
-              <div key={title} className="content-title">
-                {title}
-                <FaTimes 
-                  onClick={() => handleRemoveContentTitle(title)} 
-                  className="content-titles-remove-title-icon" 
-                />
+              <label>Content Titles</label>
+              <div className="content-titles-container">
+                {contentTitles.map((title) => (
+                  <div key={title} className="content-title">
+                    {title}
+                    <FaTimes
+                      onClick={() => handleRemoveContentTitle(title)}
+                      className="content-titles-remove-title-icon"
+                    />
+                  </div>
+                ))}
+                <div className="content-titles-add-content-title-wrapper">
+                  <input
+                    type="text"
+                    value={newContentTitle}
+                    onChange={(e) => setNewContentTitle(e.target.value)}
+                    placeholder="Enter content title"
+                    className="content-titles-content-title-input"
+                  />
+                  <button
+                    onClick={handleAddContentTitle}
+                    className="content-titles-add-content-title-btn"
+                    disabled={!newContentTitle.trim()}
+                  >
+                    <FaPlusCircle /> Add
+                  </button>
+                </div>
               </div>
-            ))}
-            <div className="content-titles-add-content-title-wrapper">
-              <input
-                type="text"
-                value={newContentTitle}
-                onChange={(e) => setNewContentTitle(e.target.value)}
-                placeholder="Enter content title"
-                className="content-titles-content-title-input"
-              />
-              <button 
-                onClick={handleAddContentTitle} 
-                className="content-titles-add-content-title-btn"
-                disabled={!newContentTitle.trim()}
-              >
-                <FaPlusCircle /> Add
-              </button>
             </div>
-          </div>
-        </div>
           </div>
         )}
       </div>
@@ -447,29 +450,26 @@ const AddBookEditor = () => {
     if (!image) {
       return setError("Image is required.");
     }
-    
+
     if (!summary) {
       return setError("Summary is required.");
     }
-    
+
     if (tags.length < 1) {
       return setError("At least one tag is required.");
-    }
-    
-    if (content.some(el => el.length < 1500)) {
-      return setError("Each content element must have at least 1500 characters.");
     }
     setIsUploading(true);
     setUploadProgress(0);
 
     try {
-      
       const formData = new FormData();
       formData.append("title", title);
       formData.append("contentTitles", JSON.stringify(contentTitles));
       formData.append("summary", summary);
       formData.append("tags", JSON.stringify(tags));
-      formData.append("image", image);
+      if (image) {
+        formData.append("image", image);
+      }
 
       formData.append("content", JSON.stringify(content));
 

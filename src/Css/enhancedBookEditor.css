@@ -249,7 +249,80 @@
     .content-titles-add-content-title-btn svg {
       font-size: 1rem;
     }
-  
+
+    .chapter-editor-container {
+      position: relative;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      transition: all 0.3s ease;
+    }
+    
+    .chapter-not-edited {
+      background-color: #f9f9f9;
+      border-color: #e0e0e0;
+    }
+    
+    .chapter-edited {
+      background-color: #f0f8ff;
+      border-color: #4CAF50;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .edit-flag {
+      position: absolute;
+      top: 10px;
+      right: 60px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.7em;
+      font-weight: bold;
+      text-transform: uppercase;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      z-index: 10;
+    }
+    
+    .chapter-not-edited .edit-flag {
+      background-color: #FFC107;
+      color: #333;
+    }
+    
+    .chapter-edited:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    .pdf-upload-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .upload-pdf-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    
+    .upload-pdf-btn:hover {
+      background-color: #0056b3;
+    }
+    
+    .upload-pdf-btn:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+
     .enhanced-book-editor {
       max-width: 900px;
       margin: 0 auto;
