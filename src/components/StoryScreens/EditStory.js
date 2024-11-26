@@ -204,7 +204,7 @@ const EnhancedBookEditor = () => {
       )
     );
     localStorage.setItem(`EditedContent-${slug}-${index}`, content);
-  }, []);
+  }, [slug]);
 
   const handleDeleteChapter = useCallback(
     (indexToDelete) => {
