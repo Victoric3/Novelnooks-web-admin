@@ -1,6 +1,6 @@
 {
   "name": "novelnooks",
-  "proxy": "http://localhost:8000",
+  "proxy": "https://novelnooks-h0aqh8dhbyfgd7h8.eastus-01.azurewebsites.net",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
