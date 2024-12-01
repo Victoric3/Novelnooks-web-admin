@@ -480,13 +480,6 @@ const EnhancedBookEditor = () => {
   
     const content = filteredChaptersAndContent.map((chapter) => chapter.content);
     const editedChapters = filteredChaptersAndContent.map((chapter) => chapter.originalIndex);
-  
-    // console.log("editedChapters: ", editedChapters);
-    // console.log("content: ", content);
-  
-    if (content.length === 0) {
-      return setError("No valid chapters to update.");
-    }
     
     setIsUploading(true);
     setUploadProgress(0);
