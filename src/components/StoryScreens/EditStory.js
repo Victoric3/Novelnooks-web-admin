@@ -498,12 +498,13 @@ const EnhancedBookEditor = () => {
       formData.append("content", JSON.stringify(content));
       const partial = editMode !== "full";
       formData.append("partial", partial);
+      
   
       if (partial) {
         formData.append("chapter", JSON.stringify(editedChapters));
         console.log("Filtered editedChapters: ", editedChapters);
       }
-  
+      console.log("title", title, "contentTitles", contentTitles, "summary", summary, "tags", tags, "content", content, 'image: ', image, "editedChapters: ", editedChapters )
       const progressInterval = setInterval(() => {
         setUploadProgress((prev) => (prev >= 90 ? 90 : prev + 10));
       }, 200);
